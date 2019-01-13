@@ -1,0 +1,7 @@
+---
+- name: Tighten sshd config
+  become: yes
+  template:
+    src: templates/sshd_config
+    dest: /etc/ssh/
+  notify: ssh restart
